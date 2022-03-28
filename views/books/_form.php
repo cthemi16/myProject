@@ -16,7 +16,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'author')->textInput() ?>
 
-    <?= $form->field($model, 'annotation')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'annotation')->textarea(['rows' => 6]) ?>
 
     <?= $form->field($model, 'cover')->textInput(['maxlength' => true]) ?>
 

@@ -1,0 +1,57 @@
+2022-03-29 00:00:57 [165.227.137.190][-][-][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 165.227.137.190
+    in /var/www/c.ohorona-i-bezpeka.com/views/layouts/main.php:78
+    in /var/www/c.ohorona-i-bezpeka.com/controllers/SiteController.php:64
+2022-03-29 00:00:57 [165.227.137.190][-][-][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 165.227.137.190
+2022-03-29 00:00:57 [165.227.137.190][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_GEOIP_ADDR' => '165.227.137.190'
+    'REDIRECT_GEOIP_CONTINENT_CODE' => 'EU'
+    'REDIRECT_GEOIP_COUNTRY_CODE' => 'DE'
+    'REDIRECT_GEOIP_COUNTRY_NAME' => 'Germany'
+    'REDIRECT_HTTPS' => 'on'
+    'REDIRECT_STATUS' => '200'
+    'GEOIP_ADDR' => '165.227.137.190'
+    'GEOIP_CONTINENT_CODE' => 'EU'
+    'GEOIP_COUNTRY_CODE' => 'DE'
+    'GEOIP_COUNTRY_NAME' => 'Germany'
+    'HTTPS' => 'on'
+    'HTTP_USER_AGENT' => 'curl/7.29.0'
+    'HTTP_HOST' => '193.151.58.120'
+    'HTTP_ACCEPT' => '*/*'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Ubuntu) Server at 193.151.58.120 Port 443</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Ubuntu)'
+    'SERVER_NAME' => '193.151.58.120'
+    'SERVER_ADDR' => '192.168.1.205'
+    'SERVER_PORT' => '443'
+    'REMOTE_ADDR' => '165.227.137.190'
+    'DOCUMENT_ROOT' => '/var/www/c.ohorona-i-bezpeka.com'
+    'REQUEST_SCHEME' => 'https'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/c.ohorona-i-bezpeka.com'
+    'SERVER_ADMIN' => 'ohorona@ohorona-kyiv.com'
+    'SCRIPT_FILENAME' => '/var/www/c.ohorona-i-bezpeka.com/web/index.php'
+    'REMOTE_PORT' => '51208'
+    'REDIRECT_URL' => '/admin/config.php'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/admin//config.php'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1648501257.873
+    'REQUEST_TIME' => 1648501257
+]

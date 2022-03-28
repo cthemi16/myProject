@@ -31,7 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'idbooks',
             'name',
             'author',
-            'annotation',
+            'annotation:ntext',
             'cover',
             //'price',
             //'date',
