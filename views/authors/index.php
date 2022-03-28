@@ -33,7 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'biography:ntext',
             [
                 'class' => ActionColumn::className(),
-                'urlCreator' => function ($action, Authors $model, $key, $index, $column) {
+                'urlCreator' => function ($action, app\models\Authors $model, $key, $index, $column) {
                     return Url::toRoute([$action, 'idauthors' => $model->idauthors]);
                  }
             ],

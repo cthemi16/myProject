@@ -34,12 +34,32 @@ AppAsset::register($this);
             'class' => 'navbar navbar-expand-md navbar-dark bg-dark fixed-top',
         ],
     ]);
+    
+    /* отрисовка меню для admin */
+    if (!Yii::$app->user->isGuest && Yii::$app->user->identity->role == 'admin') {
+        echo Nav::widget([
+            'options' => ['class' => 'navbar-nav'],
+            'items' => [
+                ['label' => 'GRUD author', 'url' => ['/authors/index']],
+                ['label' => 'GRUD books', 'url' => ['/books/index']],
+                //['label' => 'Contact', 'url' => ['/site/contact']], 
+            ]
+        ]);
+    }
+    /* отрисовка меню для admin */
+    if (Yii::$app->user->isGuest) {
+        echo Nav::widget([
+            'options' => ['class' => 'navbar-nav'],
+            'items' => [
+            ['label' => 'Books', 'url' => ['/site/index']],
+            ['label' => 'Author', 'url' => ['/site/about']],
+            ]
+        ]);
+    }
+    
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav'],
         'items' => [
-            ['label' => 'Home', 'url' => ['/site/index']],
-            ['label' => 'About', 'url' => ['/site/about']],
-            ['label' => 'Contact', 'url' => ['/site/contact']],
             Yii::$app->user->isGuest ? (
                 ['label' => 'Login', 'url' => ['/site/login']]
             ) : (
@@ -54,6 +74,7 @@ AppAsset::register($this);
             )
         ],
     ]);
+
     NavBar::end();
     ?>
 </header>

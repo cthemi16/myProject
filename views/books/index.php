@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\grid\ActionColumn;
 use yii\grid\GridView;
+use app\models\Books;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\BooksSearch */
@@ -33,8 +34,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'author',
             'annotation:ntext',
             'cover',
-            //'price',
-            //'date',
+            'price',
+            'date',
             [
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, Books $model, $key, $index, $column) {

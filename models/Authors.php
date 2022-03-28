@@ -5,17 +5,13 @@ namespace app\models;
 use Yii;
 
 /**
- * This is the model class for table "books".
+ * This is the model class for table "authors".
  *
- * @property int $idbooks
- * @property string $name
- * @property int $author
- * @property string|null $annotation
- * @property string|null $cover
- * @property float|null $price
- * @property string|null $date
+ * @property int $idauthors
+ * @property string|null $author
+ * @property string|null $biography
  *
- * @property Authors $author0
+ * @property Books[] $books
  */
 class Authors extends \yii\db\ActiveRecord
 {
@@ -24,7 +20,7 @@ class Authors extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'books';
+        return 'authors';
     }
 
     /**
@@ -33,13 +29,8 @@ class Authors extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'author'], 'required'],
-            [['author'], 'integer'],
-            [['annotation'], 'string'],
-            [['price'], 'number'],
-            [['date'], 'safe'],
-            [['name', 'cover'], 'string', 'max' => 255],
-            [['author'], 'exist', 'skipOnError' => true, 'targetClass' => Authors::className(), 'targetAttribute' => ['author' => 'idauthors']],
+            [['biography'], 'string'],
+            [['author'], 'string', 'max' => 255],
         ];
     }
 
@@ -49,23 +40,19 @@ class Authors extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'idbooks' => 'Idbooks',
-            'name' => 'Name',
+            'idauthors' => 'Idauthors',
             'author' => 'Author',
-            'annotation' => 'Annotation',
-            'cover' => 'Cover',
-            'price' => 'Price',
-            'date' => 'Date',
+            'biography' => 'Biography',
         ];
     }
 
     /**
-     * Gets query for [[Author0]].
+     * Gets query for [[Books]].
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getAuthor0()
+    public function getBooks()
     {
-        return $this->hasOne(Authors::className(), ['idauthors' => 'author']);
+        return $this->hasMany(Books::className(), ['author' => 'idauthors']);
     }
 }
