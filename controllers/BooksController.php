@@ -8,6 +8,9 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
+use yii\filters\AccessControl;
+use Yii;
+
 /**
  * BooksController implements the CRUD actions for Books model.
  */
@@ -20,7 +23,26 @@ class BooksController extends Controller
     {
         return array_merge(
             parent::behaviors(),
-            [
+            [                
+                'access' => [
+                    'class' => AccessControl::className(),
+                    'only' => [
+                        'index', 'view', 'create', 'update', 'delete',
+                    ],
+                    'rules' => [
+                        [
+                            'actions' => [
+                                'index', 'view', 'create', 'update', 'delete',
+                                ],
+                            'allow' => true,
+                            'roles' => ['@'],
+                            'matchCallback' => function ($rule, $action) {
+                                return Yii::$app->user->identity->role == 'admin';
+                            }
+                        ],
+                ],
+            ],
+                
                 'verbs' => [
                     'class' => VerbFilter::className(),
                     'actions' => [

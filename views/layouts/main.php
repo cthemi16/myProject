@@ -74,6 +74,14 @@ AppAsset::register($this);
             )
         ],
     ]);
+        /* задачи */
+
+        echo Nav::widget([
+            'options' => ['class' => 'navbar-nav'],
+            'items' => [
+            ['label' => 'Tasks', 'url' => ['/site/about']],
+            ]
+        ]);
 
     NavBar::end();
     ?>
